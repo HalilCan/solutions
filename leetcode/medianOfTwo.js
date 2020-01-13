@@ -1,4 +1,4 @@
-medianOfTwo(array1, array2) {
+function medianOfTwo(array1, array2) {
     let len1 = array1.length;
     let len2 = array2.length;
     
@@ -18,7 +18,7 @@ medianOfTwo(array1, array2) {
     }
 }
 
-medianSingleton(num, array) {
+function medianSingleton(num, array) {
     let len = array.length;
     let mid = Math.floor(len/2);
     if (len == 1) {
@@ -61,4 +61,16 @@ medianSingleton(num, array) {
 
 }
 
+let TEST_ARRS = [[1,2,3], [-3,-4,-5], [-100,101,102], [-1,22], [-5,6,12,17], [0, 10000000, 20000000], [100000], [1]];
+let TEST_COUNT = 10;
 
+function test() {
+    let len = TEST_ARRS.length;
+    for (let i = 0 ; i < TEST_COUNT; i++) {
+        let arr1 = TEST_ARRS[Math.floor(Math.random()*len)];
+        let arr2 = TEST_ARRS[Math.floor(Math.random()*len)];
+        console.log(arr1, arr2, medianOfTwo(arr1, arr2), "\n");
+    }
+}
+
+test();
