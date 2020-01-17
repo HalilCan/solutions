@@ -16,3 +16,8 @@ We as in me across time.
 
 > this is a naive O(n^2) solution. I wonder how I can optimize this 
         
+3. Native Map, Reduce, Filter
+
+> Let's make them recursive, since it's topical.
+
+> Unbelievable that this used to be difficult once. So much that I am concerned I may be missing something.
