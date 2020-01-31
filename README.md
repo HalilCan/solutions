@@ -21,3 +21,7 @@ We as in me across time.
 > Let's make them recursive, since it's topical.
 
 > Unbelievable that this used to be difficult once. So much that I am concerned I may be missing something.
+
+3. Max Rainwater Capture Calculation
+
+> The O(n) solution seems straightforward if we follow slopes and keep track of direction, local minimum and local maxima
