@@ -25,3 +25,5 @@ We as in me across time.
 3. Max Rainwater Capture Calculation
 
 > The O(n) solution seems straightforward if we follow slopes and keep track of direction, local minimum and local maxima
+
+> We'll do two runs: one to determine the 2-tuples of left-right maxima and another to traverse and count the area between them

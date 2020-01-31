@@ -3,7 +3,7 @@
 
 let trap = function (height) {
     let len = height.length;
-    let maximaArray = new Array[len][2];
+    let maximaArray = new Array[len][3];
     let maximaIndex = 0;
 
     let leftMaximum = -1;
@@ -25,15 +25,15 @@ let trap = function (height) {
             // we're going down now
             if (direction == 1) {
                 if (leftMaximum > -1) {
-                    rightMaximum = height[i - 1];
+                    rightMaximum = i - 1;
                     maximaArray[maximaIndex][0] = leftMaximum;
                     maximaArray[maximaIndex][1] = rightMaximum;
                     maximaIndex++;
 
-                    leftMaximum = height[i - 1];
+                    leftMaximum = i - 1;
                 } else {
                     // this should not happen except for the first time
-                    leftMaximum = height[i - 1];
+                    leftMaximum = i - 1;
                 }
             }
             direction = 0;
@@ -41,21 +41,28 @@ let trap = function (height) {
         if (i > 0 && height[i] > height[i - 1]) {
             // we're going up now
             if (direction == 0 && i > 0) {
-                minimum = height[i - 1];
+                minimum = i - 1;
                 maximaArray[maximaIndex - 1][2] = minimum;
-
-                leftMaximum = height[i - 1];
             }
-
             direction = 1;
         }
 
         if (leftMaximum == -1 && height[i] > 0) {
-            leftMaximum = height[i];
+            leftMaximum = i - 1;
             direction = 1;
         }
     }
-    return maximaArray;
+    //return maximaArray;
+
+    for (let i = 0; i < maximaIndex; i++) {
+        let left = maximaArray[i][0];
+        let right = maximaArray[i][1];
+        let barrier = Math.min(left, right);
+        for (let j = left + 1; j < right; j++) {
+            waterCap += barrier - height[j];
+        }
+    }
+    return waterCap;
 };
 
-console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]));
+console.log(trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]));
