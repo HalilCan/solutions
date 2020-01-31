@@ -27,3 +27,5 @@ We as in me across time.
 > The O(n) solution seems straightforward if we follow slopes and keep track of direction, local minimum and local maxima
 
 > We'll do two runs: one to determine the 2-tuples of left-right maxima and another to traverse and count the area between them
+
+> to improve: overlooked height[i-1] vs i-1 difference for the second traversal because kept old code; switching to 2-traversal took a few minutes, though it should have been obvious from the get-go (given the context of a linear-time solution) since data from both directions (essentially) is necessary
